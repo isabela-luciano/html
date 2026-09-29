@@ -1,0 +1,64 @@
+header {
+            background-color: #84B3CE;
+        }
+        header h1 {
+            color: #16587B;
+            text-align: center;
+            margin: 0;
+            padding: 10px;
+            font-family: Comic Sans MS, sans-serif;
+        }
+        header p {
+            color: #16587B;
+            text-align: center;
+            margin: 0;
+            padding: 5px;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            text-align: center;
+        }
+        nav a {
+            margin: 0 10px;
+            color: #16587B;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #F5EEDD;
+            margin: 0;
+        }
+        main {
+            padding: 20px;
+            width: 400px;
+            margin: auto;
+        }
+        main h2 {
+            text-align: center;
+            color: #16587B;
+            font-family: Helvetica, sans-serif;
+        }
+        section {
+            background-color: #fff;
+            border: 2px solid #16587B; 
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        section h3 {
+            color: #16587B;
+            margin: 0;
+            font-family: Georgia, serif;
+        }
+        section p {
+            margin: 16px 0 0 0;
+            font-family: Verdana, sans-serif;
+            color: #84B3CE;
+        }
+        footer {
+            background-color: #84B3CE;
+            color: #16587B;
+            text-align: center;
+            padding: 10px;
+            font-family: 'Segoe UI', sans-serif;
+        }
