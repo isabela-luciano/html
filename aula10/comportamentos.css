@@ -111,3 +111,7 @@ label {
   border-color: #1a73c9;
   box-shadow: 0 0 0 4px rgba(54, 158, 246, 0.3);
 }
+
+footer {
+  text-align: center;
+}
