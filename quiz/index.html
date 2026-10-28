@@ -1,0 +1,1193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" type="image/png" href="../faviconia.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../faviconiaa copy.svg" />
+    <link rel="shortcut icon" href="../faviconiaaa.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Humano ou IA</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=EB+Garamond:wght@500;600;700&display=swap">
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Humano ou IA</title>
+<!-- Novas fontes: Space Grotesk (geométrica/tech) e Plus Jakarta Sans (interface moderna) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    --bg: #F6F4FF;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-solid: #FFFFFFi;
+  --surface-hover: #F1EEFF;
+  --ink: #1B1340;
+  --muted: #6B6590;
+  --line: rgba(124, 58, 237, 0.14);
+
+  /* Cores de destaque tech e dinâmicas */
+  --primary: #7C3AED;
+  --primary-soft: #EFE9FF;
+  --accent: #EC4899;
+  --accent-soft: #FFE8F3;
+  --cyan: #06B6D4;
+  --on-accent: #FFFFFF;
+
+  /* Gradiente*/
+  --grad-main: linear-gradient(135deg, #7C3AED 0%, #D946EF 55%, #F97316 100%);
+  --grad-cool: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #06B6D4 100%);
+  --grad-soft: linear-gradient(135deg, rgba(124, 58, 237, 0.10), rgba(236, 72, 153, 0.10));
+
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+--shadow-sm: 0 2px 8px rgba(76, 29, 149, 0.07);
+  --shadow-md: 0 12px 32px -8px rgba(124, 58, 237, 0.25);
+  --glow: 0 8px 28px -6px rgba(217, 70, 239, 0.55);
+
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0A0720;
+    --surface: rgba(30, 22, 68, 0.62);
+    --surface-solid: #181040;
+    --surface-hover: #241A5C;
+    --ink: #F5F3FF;
+    --muted: #A9A3D1;
+    --line: rgba(167, 139, 250, 0.2);
+
+    --primary: #818CF8;
+    --primary-soft: #1E1B4B;
+    --accent: #FB923C;
+    --accent-soft: #431407;
+    --on-accent: #0B0F19;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.4);
+    color-scheme: dark;
+  }
+}
+
+  :root[data-theme="dark"] {
+  --bg: #0A0720;
+  --surface: rgba(30, 22, 68, 0.62);
+  --surface-solid: #181040;
+  --surface-hover: #241A5C;
+  --ink: #F5F3FF;
+  --muted: #A9A3D1;
+  --line: rgba(167, 139, 250, 0.2);
+
+  --primary: #A78BFA;
+  --primary-soft: rgba(124, 58, 237, 0.22);
+  --accent: #F472B6;
+  --accent-soft: rgba(236, 72, 153, 0.18);
+  --cyan: #22D3EE;
+  --on-accent: #FFFFFF;
+
+  --grad-soft: linear-gradient(135deg, rgba(124, 58, 237, 0.22), rgba(236, 72, 153, 0.16));
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 14px 36px -8px rgba(0, 0, 0, 0.6);
+  --glow: 0 8px 30px -6px rgba(217, 70, 239, 0.6);
+  color-scheme: dark;
+
+
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+/*gradiente*/
+  background-image:
+  radial-gradient(60rem 40rem at 10% -10%, rgba(124, 58, 237, 0.28), transparent 60%),
+  radial-gradient(50rem 36rem at 100% 0%, rgba(236, 72, 153, 0.22), transparent 60%),
+  radial-gradient(46rem 34rem at 50% 110%, rgba(6, 182, 212, 0.20), transparent 60%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  padding-inline: 16px;
+  padding-block: 0 64px;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+.wrap {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p { margin: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ---------------- Abas Superiores ---------------- */
+.abas {
+  display: flex;
+  gap: 6px; /*define espaço entre elementos, com o padding, cria um espaço de 6 px*/
+  padding: 6px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+}
+.aba {
+  flex: 1; /* faz com que o botão ocupe uma parte igual do espaço disponível em relação aos outros elementos flexíveis, posso manter assim se eu quiser que todas as abas tenham a mesma largura*/
+  min-height: 42px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid transparent;
+   border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  color: var(--muted);
+  transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease; 
+}
+
+.aba:hover:not([aria-current="page"]) {
+  color: var(--ink);
+  background: var(--primary-soft); /
+
+}
+
+.aba[aria-current="page"] {
+  background: var(--grad-main);
+  color: #FFFFFF;
+  box-shadow: var(--glow); /* sombra de destaque para a aba ativa */
+}
+
+/* ---------------- Início (Hero & Módulos) ---------------- */
+.hero {
+  padding-block: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgb(75, 6, 88);
+  background-color: rgb(222, 163, 232);
+  border: 1px solid rgb(222, 163, 232);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 8vw, 3.25rem);
+  color: var(--ink);
+}
+
+.barra {
+  width: 54px;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.lead {
+  font-size: 1.125rem;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 36rem;
+}
+
+.modulos {
+  display: grid;
+  gap: 16px;
+  padding-block: 8px 28px;
+}
+
+.modulo {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.modulo:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.modulo h2 {
+  font-size: 1.5rem;
+}
+
+.modulo p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.modulo .rotulo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Botões */
+.btn {
+  min-height: 48px; /*altura minima*/
+  padding: 10px 24px; /*esse aqui é o espaço*/
+  border-radius: 999px;  /*arredondar as bordinhas*/
+  border: 0; /*tira a borda*/
+  background: var(--grad-main); /*background é o fundo do botão e o grad main é a variavel que eu guardei as cores do gradiente*/
+  background-size: 140% 140%; /* o background-size que tá 140% 140%;
+define o tamanho do fundo do botão. 100% 100%: o fundo ocupa o tamanho do botão. 140% 140%: o fundo fica maior que o botão.*/
+  background-position: 0% 50%; /*esse aqui define a posição inicial do fundo, entao o 0% começa alinhado na esquerda e o 50% fica centralizado na vertical, então eela vai colocar a posição inicial do gradiente*/
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer; /*mostra literalmente o ponteirinho do mouse*/
+  display: inline;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, /*essa transição mostra e define quato tempo que uma mudança de estilo leva até ela acontecer*/ background-position 0.4s ease, box-shadow 0.2s ease;
+  box-shadow: var(--glow);
+}
+
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.btn.sec {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn.sec:hover {
+  background: var(--surface-hover);
+  border-color: var(--muted);
+}
+
+.sobre {
+  border-top: 1px solid var(--line);
+  padding-block: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.sobre strong {
+  color: var(--ink);
+}
+
+/* ---------------- Jogo e Dilemas ---------------- */
+.jogo {
+  padding-block: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.progresso-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.trilho {
+  height: 8px;
+  background: var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.trilho > i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--grad-main);
+  border-radius: 999px;
+  box-shadow: 0 0 14px var(--accent);
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contexto {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.situacao {
+  font-size: clamp(1.4rem, 5.5vw, 1.85rem);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.pergunta {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.opcoes {
+  display: grid;
+  gap: 12px;
+}
+
+.opcao {
+  min-height: 56px;
+  padding: 14px 18px;
+  text-align: left;
+  cursor: pointer;
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+
+.opcao:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: var(--surface-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.opcao:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.opcao:disabled {
+  cursor: default;
+  color: var(--ink);
+}
+
+.opcao.escolha {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 4px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.tag.sug {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.tag.eu {
+  background: var(--grad-cool);
+  color: #FFFFFF;
+}
+
+/* Feedback do Dilema */
+.retorno {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* faixa lateral - gradiente (talvez??)*/
+.retorno::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: var(--grad-main);
+}
+
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.retorno h3 {
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+
+.retorno .veredito {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--primary);
+}
+
+.retorno p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.retorno .btn {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+/* ---------------- Resultado ---------------- */
+.resultado {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-block: 24px 0;
+}
+
+.resultado h2 {
+  font-size: clamp(1.7rem, 6vw, 2.3rem);
+  background: var(--grad-main);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  padding-bottom: 0.08em;
+}
+
+
+.resumo {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.tabela-box {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 520px;
+  font-size: 0.9rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+th {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--surface-hover);
+}
+
+tr:last-child td { border-bottom: 0; }
+
+.nota {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.acoes {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.carta {
+  border-left: 4px solid var(--primary);
+  background: var(--primary-soft);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 14px 16px;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ---------------- Guia ---------------- */
+.guia {
+  padding-block: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.guia h2 {
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+}
+
+.dicas {
+  display: grid;
+  gap: 14px;
+}
+
+.dica {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dica h3 {
+  font-size: 1.35rem;
+  color: var(--ink);
+}
+
+.dica p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.dica .pratica {
+  color: var(--ink);
+  font-size: 0.925rem;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+}
+
+.dica .pratica b {
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-right: 6px;
+}
+
+.fecho {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  padding-block: 16px 0;
+  color: var(--primary);
+  text-wrap: balance;
+}
+
+.rodape {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .modulos { grid-template-columns: 1fr 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trilho > i,
+  .btn,
+  .opcao,
+  .retorno {
+    transition: none;
+    animation: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="abas" aria-label="Seções do site">
+    <button class="aba" type="button" data-aba="inicio">Início</button>
+    <button class="aba" type="button" data-aba="jogo">Jogo</button>
+    <button class="aba" type="button" data-aba="guia">Guia</button>
+  </nav>
+
+  <!-- INÍCIO -->
+  <main id="aba-inicio">
+    <section class="hero">
+      <p class="eyebrow">Semana da Biblioteca 2026</p>
+      <h1>Entre o Humano e a IA: Você Escolhe.</h1>
+      <div class="barra" aria-hidden="true"></div>
+      <p class="lead">Explore situações do cotidiano, reflita sobre o papel da <strong> inteligência artificial</strong> e descubra por que o pensamento humano continua sendo essencial na era digital.</p>
+    </section>
+    <section class="modulos" aria-label="Módulos">
+      <article class="modulo">
+        <p class="rotulo">Módulo 1</p>
+        <h2>Desafio: quem decide?</h2>
+        <p> Teste suas escolhas em 8 situações do dia a dia. Descubra diferentes caminhos e reflita sobre quando confiar na IA, agir por conta própria ou combinar os dois.</p>
+        <button class="btn" type="button" data-ir="jogo">Jogar</button>
+      </article>
+      <article class="modulo">
+        <p class="rotulo">Módulo 2</p>
+        <h2>Guia de uso consciente</h2>
+        <p> Aprenda 6 hábitos para usar a inteligência artificial com senso crítico, responsabilidade e criatividade nos estudos e na vida cotidiana.</p>
+        <button class="btn sec" type="button" data-ir="guia">Ler o guia</button>
+      </article>
+    </section>
+    <section class="sobre">
+      <p><strong>Como funciona:</strong> O jogo apresenta situações sem uma única resposta certa. Em cada situação, você escolhe um caminho, conhece uma sugestão e entende os motivos por trás dela. <br>
+
+      <strong> Sua privacidade importa:</strong> Você não precisa informar seu nome nem fazer cadastro. Suas escolhas não são armazenadas.</p>
+    </section>
+  </main>
+
+  <!-- JOGO -->
+  <main id="aba-jogo" hidden>
+    <section class="jogo" id="quiz">
+      <div>
+        <div class="progresso-linha"><span id="progresso-texto"></span></span><span id="progresso-ctx"></span></div>
+        <div class="trilho" aria-hidden="true"><i id="progresso-barra"></i></div>
+      </div>
+      <p class="contexto" id="q-contexto"></p>
+      <h2 class="situacao" id="q-situacao" tabindex="-1"></h2>
+      <p class="pergunta" id="q-pergunta"></p>
+      <div class="opcoes" id="q-opcoes" role="group" aria-label="Quem deve decidir?"></div>
+      <section class="retorno" id="q-retorno" hidden aria-live="polite">
+        <h3 id="q-retorno-titulo" tabindex="-1">Para pensar</h3>
+        <p class="veredito" id="q-veredito"></p>
+        <p id="q-explicacao"></p>
+        <button class="btn" type="button" id="q-proximo">Próxima situação</button>
+      </section>
+    </section>
+
+    <section class="jogo resultado" id="resultado" hidden>
+      <p class="eyebrow">Resultado</p>
+      <h2 id="r-titulo" tabindex="-1"></h2>
+      <p class="resumo" id="r-resumo"></p>
+      <div class="tabela-box">
+        <table>
+          <thead><tr><th scope="col">Situacao</th><th scope="col">Sua escolha</th><th scope="col">Caminho sugerido</th></tr></thead>
+          <tbody id="r-linhas"></tbody>
+        </table>
+      </div>
+      <p class="nota">Não existe placar certo ou errado. O que importa é saber explicar por que você escolheu cada caminho.</p>
+      <p class="carta">Na sexta, 30/10, a Carta para o Futuro é escrita à mão, sem IA. Pense nela: que profissional você quer ser?</p>
+      <div class="acoes">
+        <button class="btn" type="button" id="r-reiniciar">Jogar de novo</button>
+        <button class="btn sec" type="button" data-ir="guia">Ler o guia</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- GUIA -->
+  <main id="aba-guia" hidden>
+    <section class="guia">
+      <p class="eyebrow">Módulo 2</p>
+      <h2>Guia de uso consciente da IA</h2>
+      <p class="lead">Seis hábitos simples para usar a inteligência artificial sem abrir mão do seu raciocínio.</p>
+      <div class="dicas" id="dicas"></div>
+      <p class="fecho">A inteligência artificial orienta, mas a responsabilidade final é sua.</p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    Semana da Biblioteca 2026 · 26 a 30 de outubro · Desenvolvimento de Sistemas, SENAI Suzano <br> Beatriz Novais, Eduarda Marselha, Isabela Silva e Josué Raul
+  </footer>
+</div>
+<script>
+/* =========================================================
+   HUMANO OU IA? — LÓGICA ATUALIZADA
+   Cada dilema possui suas próprias opções de resposta.
+   ========================================================= */
+
+var OPCOES = {
+  inteligenciaartificial: "Deixar a IA fazer tudo",
+  humano: "Fazer tudo sem ajuda da IA",
+  juntinhos: "Usar a IA como apoio e participar da criação dos slides e das falas",
+
+  IA: "Deixar a IA decidir o que responder",
+  pessoinha: "Responder sozinha, sem considerar outras opiniões",
+  juntas: "Usar a IA para refletir, mas escolher uma resposta respeitosa",
+
+  followia: "Seguir apenas a IA",
+  nobody: "Decidir sozinho sem considerar ninguém",
+  both: "Usar a IA como apoio e procurar um profissional",
+
+  ia: "Só a IA decide",
+  pessoa: "Só a pessoa decide",
+  juntos: "IA e pessoa, juntas",
+
+  iazinha: "Considerar a identificação da IA suficiente",
+  humaninho: "Ignorar completamente a tecnologia",
+  juntinhas: "Usar a análise como pista e verificar as evidências",
+
+  soia: "Só a IA faz tudo, sem participação da pessoa",
+  pessoas: "Decidir sozinha, sem considerar outras opiniões",
+  together: "Usar a IA para refletir, mas decidir por conta própria",
+
+  AI: "Usar o material da IA sem participar",
+  people: "Fazer tudo sem nenhuma ajuda tecnológica",
+  us: "Usar as ideias da IA e acrescentar sua própria criatividade"
+};
+
+/* ------------------------- DILEMAS ------------------------- */
+
+var DILEMAS = [
+  {
+    contexto: "Escola",
+    situacao: "Um grupo precisa fazer uma apresentação, e um integrante sugere usar a IA para criar todos os slides e as falas. Os outros ficam em dúvida se devem usar tudo pronto ou participar da criação.",
+    pergunta: "Qual é a melhor maneira de preparar a apresentação usando a IA?",
+    opcoes: ["inteligenciaartificial", "humano", "juntinhos"],
+    sugerido: "juntinhos",
+    explicacao: "A IA pode ajudar a organizar as ideias e sugerir conteúdos, mas os alunos precisam participar, entender o assunto e adaptar a apresentação ao que aprenderam."
+  },
+  {
+    contexto: "Comunicação digital",
+    situacao: "Uma pessoa recebe uma mensagem ofensiva nas redes sociais e quer responder. Ela pensa em pedir à IA que escreva a resposta, mas percebe que o assunto envolve seus próprios sentimentos e sua relação com a outra pessoa.",
+    pergunta: "Como a pessoa deve agir nessa situação?",
+    opcoes: ["IA", "pessoinha", "juntas"],
+    sugerido: "pessoinha",
+    explicacao: "Como a situação envolve sentimentos pessoais, a pessoa pode escrever sua própria resposta, expressando o que sente e pensando nas consequências de suas palavras. Assim, ela assume a responsabilidade pelo que diz e pode se comunicar de maneira sincera e respeitosa."
+  },
+  {
+    contexto: "Saúde",
+    situacao: "Uma pessoa conta seus sintomas para uma IA e recebe possíveis explicações para o que está sentindo.",
+    pergunta: "Como ela deve usar as informações recebidas?",
+    opcoes: ["followia", "nobody", "both"],
+    sugerido: "both",
+    explicacao: "A IA pode ajudar a entender informações gerais, mas não substitui uma avaliação médica. Um profissional pode analisar os sintomas e indicar os cuidados adequados."
+  },
+  {
+    contexto: "Mercado de trabalho",
+    situacao: "Uma empresa quer usar IA para selecionar candidatos a uma vaga, analisando currículos e eliminando automaticamente alguns deles.",
+    pergunta: "Quem deve participar da seleção dos candidatos?",
+    opcoes: ["ia", "pessoa", "juntos"],
+    sugerido: "juntos",
+    explicacao: "A IA pode agilizar a análise dos currículos, mas pode deixar passar candidatos qualificados ou reproduzir preconceitos. A participação humana ajuda a avaliar cada candidato com mais cuidado."
+  },
+  {
+    contexto: "Segurança",
+    situacao: "Uma IA identifica uma pessoa como possível suspeita de um crime usando imagens de câmeras de segurança, mas o reconhecimento pode estar errado.",
+    pergunta: "Como essa informação deve ser utilizada?",
+    opcoes: ["iazinha", "humaninho", "juntinhas"],
+    sugerido: "juntinhas",
+    explicacao: "A tecnologia pode ajudar em investigações, mas pode cometer erros. É importante verificar outras evidências e garantir que ninguém seja acusado injustamente."
+  },
+  {
+    contexto: "Meio ambiente",
+    situacao: "Uma IA analisa imagens de satélite e identifica uma área que pode estar sofrendo desmatamento. Uma equipe precisa decidir o que fazer.",
+    pergunta: "Quem deve decidir as próximas ações?",
+    opcoes: ["ia", "pessoa", "juntos"],
+    sugerido: "juntos",
+    explicacao: "A IA pode identificar áreas que precisam de atenção, enquanto os profissionais verificam a situação no local e escolhem as medidas mais adequadas."
+  },
+  {
+    contexto: "Vida pessoal",
+    situacao: "Uma pessoa está passando por um momento difícil e começa a conversar com uma IA sobre seus sentimentos. Ela se sente acolhida e pensa em deixar de procurar um psicólogo, pois acredita que a IA já é suficiente.",
+    pergunta: "Quem deve tomar essa decisão?",
+    opcoes: ["soia", "pessoas", "together"],
+    sugerido: "together",
+    explicacao: "A IA pode ajudar a organizar os sentimentos e pensar em possíveis soluções, mas não conhece toda a história da pessoa e pode dar conselhos inadequados. Em situações difíceis, conversar com alguém de confiança ou procurar um psicólogo pode fazer diferença."
+  },
+  {
+    contexto: "Criatividade",
+    situacao: "Uma estudante precisa escrever um poema autoral para um concurso escolar. Ela pensa em pedir à IA que escreva o poema inteiro, mas o concurso valoriza a expressão pessoal e as ideias originais dos participantes.",
+    pergunta: "Como a estudante deve produzir seu poema?",
+    opcoes: ["AI", "people", "us"],
+    sugerido: "people",
+    explicacao: "AA estudante deve escrever o poema sozinha, sem ajuda da IA, para expressar suas próprias ideias, sentimentos e criatividade. Dessa forma, o trabalho será realmente autoral e respeitará a proposta do concurso."
+  }
+];
+
+/* -------------------------- DICAS -------------------------- */
+
+var DICAS = [
+  {
+    titulo: "Confira as informações",
+    texto: "A IA pode apresentar respostas incorretas ou desatualizadas. Antes de confiar no que ela diz, verifique se as informações são verdadeiras.",
+    pratica: "Consulte sites confiáveis, livros ou professores para confirmar as respostas."
+  },
+  {
+    titulo: "Cuide da sua privacidade",
+    texto: "Informações compartilhadas com ferramentas de IA podem ser armazenadas. Evite fornecer dados pessoais ou informações confidenciais.",
+    pratica: "Não compartilhe senhas, documentos ou fotos privadas."
+  },
+  {
+    titulo: "Seja transparente",
+    texto: "Quando utilizar IA em atividades escolares ou profissionais, explique como a ferramenta ajudou no seu trabalho.",
+    pratica: "Informe se usou IA para pesquisar, revisar ou organizar suas ideias."
+  },
+  {
+    titulo: "Use seu próprio raciocínio",
+    texto: "A IA pode facilitar tarefas, mas pensar, questionar e aprender continuam sendo importantes para desenvolver suas habilidades.",
+    pratica: "Tente resolver o problema primeiro e use a IA para esclarecer suas dúvidas."
+  },
+  {
+    titulo: "Use a IA com respeito",
+    texto: "Conteúdos criados por IA podem prejudicar outras pessoas quando usados para espalhar mentiras, constranger ou enganar.",
+    pratica: "Peça autorização antes de usar imagens de outras pessoas e confira o conteúdo antes de compartilhar."
+  },
+  {
+    titulo: "Assuma suas escolhas",
+    texto: "A IA oferece sugestões, mas nem sempre considera todas as consequências de uma decisão. Avalie as possibilidades antes de agir.",
+    pratica: "Em decisões importantes, compare informações e considere os impactos para você e para os outros."
+  }
+];
+
+/* --------------------- LÓGICA DO SITE --------------------- */
+
+(function () {
+  var $ = function (id) {
+    return document.getElementById(id);
+  };
+
+  var abas = {
+    inicio: $("aba-inicio"),
+    jogo: $("aba-jogo"),
+    guia: $("aba-guia")
+  };
+
+  var botoesAba = document.querySelectorAll(".aba");
+  var total = DILEMAS.length;
+  var indice = 0;
+  var respostas = [];
+  var respondeu = false;
+
+  function mostrar(nome) {
+    if (!abas[nome]) {
+      nome = "inicio";
+    }
+
+    Object.keys(abas).forEach(function (k) {
+      abas[k].hidden = (k !== nome);
+    });
+
+    botoesAba.forEach(function (b) {
+      if (b.getAttribute("data-aba") === nome) {
+        b.setAttribute("aria-current", "page");
+      } else {
+        b.removeAttribute("aria-current");
+      }
+    });
+
+    window.scrollTo(0, 0);
+  }
+
+  function ir(nome) {
+    try {
+      location.hash = nome;
+    } catch (e) {}
+
+    mostrar(nome);
+  }
+
+  botoesAba.forEach(function (b) {
+    b.addEventListener("click", function () {
+      ir(b.getAttribute("data-aba"));
+    });
+  });
+
+  document.querySelectorAll("[data-ir]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      ir(b.getAttribute("data-ir"));
+    });
+  });
+
+  window.addEventListener("hashchange", function () {
+    mostrar((location.hash || "").replace("#", ""));
+  });
+
+  /* Guia de uso consciente */
+
+  var caixaDicas = $("dicas");
+
+  caixaDicas.innerHTML = "";
+
+  DICAS.forEach(function (d) {
+    var art = document.createElement("article");
+    art.className = "dica";
+
+    var h = document.createElement("h3");
+    h.textContent = d.titulo;
+
+    var p = document.createElement("p");
+    p.textContent = d.texto;
+
+    var pr = document.createElement("p");
+    pr.className = "pratica";
+
+    var b = document.createElement("b");
+    b.textContent = "Na prática";
+
+    pr.appendChild(b);
+    pr.appendChild(document.createTextNode(" " + d.pratica));
+
+    art.appendChild(h);
+    art.appendChild(p);
+    art.appendChild(pr);
+
+    caixaDicas.appendChild(art);
+  });
+
+  /* Criar e exibir um dilema */
+
+  function mostrarPergunta() {
+    var d = DILEMAS[indice];
+
+    respondeu = false;
+
+    $("quiz").hidden = false;
+    $("resultado").hidden = true;
+
+    $("progresso-texto").textContent =
+      "Situação " + (indice + 1) + " de " + total;
+
+    $("progresso-barra").style.width =
+      (indice / total * 100) + "%";
+
+    $("q-contexto").textContent = d.contexto;
+    $("q-situacao").textContent = d.situacao;
+    $("q-pergunta").textContent = d.pergunta;
+    $("q-retorno").hidden = true;
+
+    var caixa = $("q-opcoes");
+    caixa.innerHTML = "";
+
+    /* Agora cada dilema utiliza suas próprias opções. */
+
+    d.opcoes.forEach(function (chave) {
+      var btn = document.createElement("button");
+
+      btn.type = "button";
+      btn.className = "opcao";
+      btn.setAttribute("data-chave", chave);
+
+      var rotulo = document.createElement("span");
+      rotulo.textContent = OPCOES[chave];
+
+      var tags = document.createElement("span");
+      tags.className = "tags";
+
+      btn.appendChild(rotulo);
+      btn.appendChild(tags);
+
+      btn.addEventListener("click", function () {
+        escolher(chave);
+      });
+
+      caixa.appendChild(btn);
+    });
+  }
+
+  function addTag(btn, classe, texto) {
+    var t = document.createElement("span");
+
+    t.className = "tag " + classe;
+    t.textContent = texto;
+
+    btn.querySelector(".tags").appendChild(t);
+  }
+
+  /* Registrar a escolha e mostrar a sugestão */
+
+  function escolher(chave) {
+    if (respondeu) {
+      return;
+    }
+
+    respondeu = true;
+
+    var d = DILEMAS[indice];
+    respostas[indice] = chave;
+
+    document.querySelectorAll("#q-opcoes .opcao").forEach(function (btn) {
+      var k = btn.getAttribute("data-chave");
+
+      btn.disabled = true;
+
+      if (k === chave) {
+        btn.classList.add("escolha");
+        addTag(btn, "eu", "Sua escolha");
+      }
+
+      if (k === d.sugerido) {
+        addTag(btn, "sug", "Caminho sugerido");
+      }
+    });
+
+    $("q-veredito").textContent =
+      (chave === d.sugerido)
+        ? "Você chegou ao mesmo caminho que sugerimos."
+        : "Nossa sugestão era: " +
+          OPCOES[d.sugerido].toLowerCase() +
+          ". Outras visões são possíveis; o importante é saber explicar a sua.";
+
+    $("q-explicacao").textContent = d.explicacao;
+
+    $("q-proximo").textContent =
+      (indice + 1 < total)
+        ? "Próxima situação"
+        : "Ver resultado";
+
+    $("progresso-barra").style.width =
+      ((indice + 1) / total * 100) + "%";
+
+    $("q-retorno").hidden = false;
+    $("q-retorno-titulo").focus();
+  }
+
+  /* Resultado final */
+
+  function mostrarResultado() {
+    var iguais = 0;
+    var linhas = $("r-linhas");
+
+    linhas.innerHTML = "";
+
+    DILEMAS.forEach(function (d, i) {
+      if (respostas[i] === d.sugerido) {
+        iguais++;
+      }
+
+      var tr = document.createElement("tr");
+
+      var textos = [
+        d.contexto + ": " + d.pergunta.replace(/\?$/, ""),
+        OPCOES[respostas[i]],
+        OPCOES[d.sugerido]
+      ];
+
+      textos.forEach(function (txt) {
+        var td = document.createElement("td");
+        td.textContent = txt;
+        tr.appendChild(td);
+      });
+
+      linhas.appendChild(tr);
+    });
+
+    $("r-titulo").textContent =
+      "Você concordou com " + iguais + " de " + total +
+      " caminhos sugeridos";
+
+    $("r-resumo").textContent =
+      iguais >= Math.ceil(total / 2)
+        ? "Você olha para cada situação antes de decidir quem deve decidir. Esse é o centro do tema da semana."
+        : "Muitas dessas situações têm mais de uma resposta razoável. Compare as suas escolhas com as sugeridas e converse com a turma.";
+
+    $("quiz").hidden = true;
+    $("resultado").hidden = false;
+
+    window.scrollTo(0, 0);
+    $("r-titulo").focus();
+  }
+
+  /* Navegação entre os dilemas */
+
+  $("q-proximo").addEventListener("click", function () {
+    if (indice + 1 < total) {
+      indice++;
+      mostrarPergunta();
+
+      window.scrollTo(0, 0);
+      $("q-situacao").focus();
+    } else {
+      mostrarResultado();
+    }
+  });
+
+  /* Reiniciar o jogo */
+
+  $("r-reiniciar").addEventListener("click", function () {
+    indice = 0;
+    respostas = [];
+
+    mostrarPergunta();
+    window.scrollTo(0, 0);
+  });
+
+  /* Inicialização */
+
+  mostrarPergunta();
+  mostrar((location.hash || "").replace("#", ""));
+})();
+</script>
+</body>
+</html>
