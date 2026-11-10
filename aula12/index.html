@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mídia em HTML — sobre Diamond Eyes</title>
+  <title>Mídia em HTML — sobre paramore - All we know is falling </title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>⋆˚࿔♫⋆˚࿔ Diamond Eyes</h1>
+  <h1>⋆˚࿔♫⋆˚࿔ All we know is falling </h1>
   <p>Vídeo, áudio, YouTube e PDF em uma única página.</p>
 
-  <!-- ===== VÍDEO ===== -->
-  <h2>Nosso vídeo - Beauty School</h2>
+  
+  <h2>MV - Pressure</h2>
   <video width="640" height="360" controls poster="imagem/poster.jpg" preload="metadata">
     <source src="video/cafe.mp4" type="video/mp4">
     <source src="video/cafe.webm" type="video/webm">
@@ -20,26 +21,32 @@
     <a href="video/cafe.mp4">Baixe o vídeo (MP4)</a>.
   </video>
 
-  <!-- ===== ÁUDIO ===== -->
-  <h2>Aúdio de 976-EVIL</h2>
+
+  <section>
+  <h2>MV - Emergency</h2>
+  <!-- Troque SEU_ID_DO_VIDEO pelo código que aparece depois de "v=" no endereço do vídeo -->
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/gRlHBTYKyVg?si=z64-S_fS7WF_OJBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ </section>
+ 
+ <section>
+  <h2>Aúdio de Franklin</h2>
   <audio controls>
     <source src="audio/jingle.mp3" type="audio/mpeg">
     <source src="audio/jingle.ogg" type="audio/ogg">
     Seu navegador não suporta áudio.
     <a href="audio/jingle.mp3">Baixe a vinheta (MP3)</a>.
   </audio>
+</section>
 
-  <!-- ===== YOUTUBE ===== -->
-  <h2>Vídeo de Beauty School</h2>
-  <!-- Troque SEU_ID_DO_VIDEO pelo código que aparece depois de "v=" no endereço do vídeo -->
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/gRlHBTYKyVg?si=z64-S_fS7WF_OJBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-  <!-- ===== PDF ===== -->
-  <h2>lista de faixas do album</h2>
+  <h2>lista de faixas do album All we know is falling</h2>
   <object data="docs/cardapio.pdf" type="application/pdf" width="640" height="400">
     Seu navegador não mostra PDF aqui.
     <a href="docs/cardapio.pdf">Abra o cardápio em PDF</a>.
   </object>
 
 </body>
+<footer>
+    <br> <a href="../index.html"><button>Voltar</button></a>
+</footer>
 </html>
